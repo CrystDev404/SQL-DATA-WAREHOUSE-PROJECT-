@@ -27,7 +27,7 @@ CREATE DATABASE DataWareHouse;
 
 USE DataWareHouse;
 
---Creare SCHEMA 
+--Create SCHEMA 
 
 CREATE SCHEMA bronze;
 GO
