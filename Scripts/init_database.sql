@@ -14,7 +14,7 @@ Running this script will drop the entire 'DataWareHouse' database if it exists. 
 Proceed with caution and ensure you have a proper backups before running this script 
 */
 
-IF EXISTS(SELECT 1 FROM sys.databases WHERE name = 'DataWareHouse')
+IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWareHouse')
 BEGIN
   ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
   DROP DATABASE DataWareHouse;
