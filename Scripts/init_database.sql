@@ -11,12 +11,23 @@ Other users are advie to peroform a check to ptreven database drop and lost data
 
 WARNING
 Running this script will drop the entire 'DataWareHouse' database if it exists. All data in the database will be permanently deleted. 
-Proceed with caustion and ensure you have a proper backups before running this script 
+Proceed with caution and ensure you have a proper backups before running this script 
 */
+
+IF EXISTS(SELECT 1 FROM sys.databases WHERE name = 'DataWareHouse')
+BEGIN
+  ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+  DROP DATABASE DataWareHouse;
+END;
+GO
+
+-- Create the 'DataWareHouse' database
 
 CREATE DATABASE DataWareHouse;
 
 USE DataWareHouse;
+
+--Creare SCHEMA 
 
 CREATE SCHEMA bronze;
 GO
