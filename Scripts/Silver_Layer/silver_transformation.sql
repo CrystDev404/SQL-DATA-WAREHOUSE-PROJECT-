@@ -1,5 +1,7 @@
 
-/* This is the script for all transformations that was performed on the raw files and Bronze layer files in the dataset to fit the criteria */
+/* This is the script for all transformations that was performed on the raw files and Bronze layer files in the dataset to fit the criteria
+This is the stored procedure
+*/
 
 EXEC silver.load_silver
 CREATE OR ALTER PROCEDURE silver.load_silver AS
