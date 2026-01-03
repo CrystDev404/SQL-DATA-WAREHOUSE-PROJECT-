@@ -34,7 +34,8 @@ BEGIN
 	FROM(
 	SELECT * , 
 	ROW_NUMBER() OVER (PARTITION BY cst_id ORDER BY cst_create_date DESC) AS flag_last
-	FROM bronze.crm_cust_info)t WHERE flag_last = 1
+	FROM bronze.crm_cust_info WHERE cst_id IS NOT NULL)
+	t WHERE flag_last = 1
 
 	TRUNCATE TABLE silver.crm_prd_info
 	INSERT INTO silver.crm_prd_info(
